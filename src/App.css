@@ -50,6 +50,14 @@
   background: linear-gradient(to right, rgba(0, 0, 0, 0.712), rgba(5, 5, 5, 0.445)), url(./imagenes/HomeBoton.png); 
  
 }
+.flex-container2 {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 20px;
+  text-align: center;
+  flex-direction: column;
+  background-color: burlywood;
+}
 
 .flex-item-left {
 
