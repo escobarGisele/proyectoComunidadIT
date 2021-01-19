@@ -98,16 +98,19 @@
   animation: text 3s 1;
 
 }
-.MuiButton-label {
-  width: 50;
-  display: inherit;
-  align-items: inherit;
-  justify-content: inherit;
-}
+
 input[type="number"] {
   width:40px;
 }
-
+.flex-container-form{
+  display: flex;
+  flex-wrap: wrap;
+  
+  text-align: center;
+  flex-direction: column;
+  background-color: rgb(235, 217, 194);
+  
+}
 .h1{
   display: flex;
   flex-wrap: wrap;

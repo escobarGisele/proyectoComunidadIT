@@ -14,6 +14,12 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import DialogoForm from './DialogoForm'
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
@@ -51,6 +57,13 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   
   },
+  colorAcor:{
+    justifyContent: 'center',
+    backgroundColor: '#bee5d3',
+    color: 'black',
+    border: '0.5px solid #eb5e30',
+    width:'40%'
+  },
   total: {
     marginTop: '1rem',
     marginBottom: '1rem',
@@ -86,6 +99,17 @@ const useStyles = makeStyles((theme) => ({
  
 export default function Cart({ cart, setCart }) {
   const classes = useStyles(); 
+  const [open, setOpen] = React.useState(false);
+
+  
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const getTotalSum = () => {
     return cart.reduce(
@@ -144,6 +168,7 @@ console.groupEnd()
       
 
        <div class="flex-item-left" >
+       <div className={classes.header}>
       <Button variant="outlined" color="primary" onClick={() => getLinkWhastapp()} className={classes.total}>
       Confirmar: <WhatsAppIcon fontSize="large"/>
 
@@ -156,19 +181,37 @@ console.groupEnd()
       Vaciar carrito <DeleteIcon fontSize="large"/>
 
       </Button>
+      <div>
+      <Button variant="outlined" color="primary" onClick={handleClickOpen} className={classes.total}>
+        Completa tus datos
+      </Button>
 
-      
-      
-      
-      {/* <div className={classes.root}> */}
+      <Dialog open={open} onClose={handleClose} >
+        <DialogTitle id="form-dialog-title">Completa </DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Por favor completa los datos
+          </DialogContentText>
+          <DialogoForm/>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Cancel
+          </Button>
+          <Button onClick={handleClose} color="primary">
+            Subscribe
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </div>
     
-      <Accordion>
+      {/* <Accordion className={classes.colorAcor} container justify="center" >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
-          id="panel1a-header"
+          id="panel1a-header" aling="center"
         >
-          <Typography className={classes.heading}>Accordion 1</Typography>
+          <Typography className={classes.heading}>Complete sus datos</Typography>
         </AccordionSummary>
         <AccordionDetails>
         
@@ -176,8 +219,8 @@ console.groupEnd()
        <DialogoForm/>
           
         </AccordionDetails>
-      </Accordion>
-      
+      </Accordion> */}
+      </div>
     </div>
     <div className={classes.productos}>
       {cart.map((producto, index) => (
