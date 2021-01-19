@@ -69,13 +69,6 @@ export default function ProductosNavidad({ setCart, cart }) {
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   const [products] = useState([
     {
@@ -177,39 +170,7 @@ export default function ProductosNavidad({ setCart, cart }) {
                   </Button>
                   </Typography>
 
-                  <Button 
-                    onClick={handleClickOpen}
-                    className={classes.verMas}
-                    variant="outlined"  
-                  >
-                    Ver Foto
-                  </Button>
-                  <Dialog
-                    fullScreen={fullScreen}
-                    open={open}
-                    onClose={handleClose}
-                    aria-labelledby="responsive-dialog-title"
-                  >
-                    <DialogTitle id="responsive-dialog-title">{"Foto"}</DialogTitle>
-                    <DialogContent>
-                      <DialogContentText>
-                      <Typography gutterBottom variant="subtitle1">
-                        {producto.nombre}
-                      </Typography>
-                      {/* <img 
-                        className= {classes.img} 
-                        alt= {producto.name} 
-                        src= {producto.img} 
-                      /> */}
-                      </DialogContentText>
-                    </DialogContent>
-                    <DialogActions>
-                      <Button onClick={handleClose} color="primary" autoFocus>
-                        Cerrar
-                      </Button>
-                    </DialogActions>
-                  </Dialog>
-
+                
                 </Grid>
               </Grid>
               <Grid item>

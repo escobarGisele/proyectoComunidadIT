@@ -86,54 +86,61 @@ export default function Products({ setCart, cart }) {
 
   const [products] = useState([
     {
-      name: 'Box numero 1',
+      name: 'Mini tarta Frutilla',
       cost: 180,
-      descripcion: 'Paletas bañadas con relleno de helado sabor americana',
+      descripcion: 'Mini tarta de frutilla con copos de crema',
       image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/miniTartaFrutilla.jpg?alt=media&token=89adea20-1ab6-4d09-baed-3ad4c350ae79',
     },
   
     {
-        name: 'Box numero 1',
+        name: 'Mini tarta Oreo',
         cost: 180,
-        descripcion: 'Paletas bañadas con relleno de helado sabor americana',
-        image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/Desayuno%2Fbox.png?alt=media&token=27c09eee-5c95-4657-84ec-d82cb4627aca',
+        descripcion: 'Mini tarta de oreo con dulce de leche y relleno oreo',
+        image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/miniTartaOreo.jpg?alt=media&token=7ceb2cbd-11ac-4a73-8af6-bd2d24f2df30',
       },
       {
         
-        name: 'Box numero 2',
-        descripcion: 'Doble carne, bacon, cheddar y cebolla',
+        name: 'Vaso tiramisu',
+        descripcion: 'Vaso de 350cc de tiramisu, relleno de queso mascarpone',
         cost: 170,
-        image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/Desayuno%2Fbox1.png?alt=media&token=a5fbd34b-d4e8-4664-83b3-c7a6b63db3ab',
+        image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/vasoTiramisu.jpg?alt=media&token=451891e2-50fc-4ae8-a729-9f67ae1969dd',
       },
       {
-        name: 'Box numero 1',
+        name: 'Vaso de chocotorta',
         cost: 180,
-        descripcion: 'Paletas bañadas con relleno de helado sabor americana',
-        image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/Desayuno%2Fbox.png?alt=media&token=27c09eee-5c95-4657-84ec-d82cb4627aca',
+        descripcion: 'Vaso de 350 cc de chocotorta, relleno de queso crema y dulce de leche',
+        image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/vasoChocotorta.jpg?alt=media&token=b3c07eda-a87e-4064-ba06-46b4992b05b1',
       },
       {
         
-        name: 'Box numero 2',
-        descripcion: 'Doble carne, bacon, cheddar y cebolla',
+        name: 'AlfaCookies',
+        descripcion: 'Alfajor de cookies relleno de nutella',
         cost: 170,
-        image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/Desayuno%2Fbox1.png?alt=media&token=a5fbd34b-d4e8-4664-83b3-c7a6b63db3ab',
+        image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/alfaCookies.jpg?alt=media&token=3e2bf9f6-3c7c-434b-842a-af594e376976',
       },
     
       {
         
-        name: 'Box numero 3',
-        descripcion: 'Doble carne, cheddar, tomate, y pepino',
+        name: 'AlfaCookies bañadas',
+        descripcion: 'Alfajor de cookies relleno de dulce de leche',
         cost: 150,
-        image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/Desayuno%2Fdesayuno.png?alt=media&token=dcdd0aa7-7d6e-489f-ae9e-413dbb442bd3',
+        image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/alfaBa%C3%B1adas.jpg?alt=media&token=8231e901-47a1-4722-af23-cd9d3332e7c2',
+      },
+      {
+        
+        name: 'Cupcake Marroc',
+        descripcion: 'Cupcake marroc con trozos de oreo',
+        cost: 150,
+        image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/cupcakeMarroc.jpg?alt=media&token=3f60f747-866b-429f-9cbc-ecf98c352623',
       },
       
-      // {
+      {
         
-      //   name: 'Box numero 4',
-      //   descripcion: 'Doble carne, cheddar, tomate, y pepino',
-      //   cost: 150,
-      //   image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/Desayuno%2Fdesayuno2.png?alt=media&token=b1e373b0-cc0e-4d73-b143-1652c15e4d32',
-      // },
+        name: 'Medialunas',
+        descripcion: 'Medialunas de grasa caseras     -----',
+        cost: 150,
+        image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/medialunas.jpg?alt=media&token=1843d2df-7c90-48f6-bd33-e609bed61ac0',
+      },
       
   ]);
 
@@ -185,7 +192,7 @@ export default function Products({ setCart, cart }) {
                 
                 <Typography variant="subtitle1" className="hola"> ${producto.cost}</Typography>
               
-                  <Typography variant="body2" gutterBottom>
+                  <Typography variant="body2" >
                     {producto.descripcion}
                   </Typography>
                   
@@ -202,38 +209,7 @@ export default function Products({ setCart, cart }) {
                   </Button>
                   </Typography>
 
-                  <Button 
-                    onClick={handleClickOpen}
-                    className={classes.verMas}
-                    variant="outlined"  
-                  >
-                    Ver Foto
-                  </Button>
-                  <Dialog
-                    fullScreen={fullScreen}
-                    open={open}
-                    onClose={handleClose}
-                    aria-labelledby="responsive-dialog-title"
-                  >
-                    <DialogTitle id="responsive-dialog-title">{"Foto"}</DialogTitle>
-                    <DialogContent>
-                      <DialogContentText>
-                      <Typography gutterBottom variant="subtitle1">
-                        {producto.index}
-                      </Typography>
-                       <img 
-                        className= {classes.img} 
-                        alt= {producto.name} 
-                        src= {producto.img} 
-                      /> 
-                      </DialogContentText>
-                    </DialogContent>
-                    <DialogActions>
-                      <Button onClick={handleClose} color="primary" autoFocus>
-                        Cerrar
-                      </Button>
-                    </DialogActions>
-                  </Dialog>
+                  
 
                 </Grid>
               </Grid>

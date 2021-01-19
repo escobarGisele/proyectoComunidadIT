@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     minWidth: 300,
     width: '100%',
-    color:'red'
+    
   },
   image: {
     position: 'relative',
@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
-  focusVisible: {},
+  
   imageButton: {
     position: 'absolute',
     left: 0,
@@ -116,18 +116,10 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6}px`,
   },
-  imageMarked: {
-    height: 3,
-    width: 18,
-    backgroundColor: theme.palette.common.white,
-    position: 'absolute',
-    bottom: -2,
-    left: 'calc(50% - 9px)',
-    transition: theme.transitions.create('opacity'),
-  },
+  
 }));
 
-export default function ButtonBases() {
+export default function ProductosGaleria() {
   const classes = useStyles();
   
 
@@ -135,8 +127,14 @@ export default function ButtonBases() {
   return (
     
     <div class="flex-container2" >
-      <div class="center">  <span className="text1">Mis Productos</span></div>
+      <div class="center"> 
+        <Link to="/confirmarCompra">
+          <span className="text1"> Mis productos </span>
+            </Link>
+      </div>
+      
       <h4>Podes ver algunos de mis de mis trabajos e ir a la tienda presionando sobre cualquier foto</h4>
+    
     <div className={classes.root}>
       {images.map((image) => (
         <ButtonBase 
