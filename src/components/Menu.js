@@ -21,7 +21,7 @@ const Menu = () => {
                         <p className="pSarasa" >Soy Sol Lencina, dueña de bakerysunny, realizo pasteleria artesanal con mucho amor y dedicación.</p>
                     </div>
                     <p className="prod">Te invito a ver </p>
-                    <Link to="/confirmarCompra">
+                    <Link to="/productos">
 
                         <span className="text1"> mis productos </span>
 

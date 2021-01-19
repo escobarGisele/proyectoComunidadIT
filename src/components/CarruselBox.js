@@ -24,13 +24,13 @@ const images = [
     url: `${pascuas}`,
     //title: 'Pascuas',
     width: '40%',
-    link:'/productosPascuas'
+    link:'/confirmarCompra'
   },
   {
     url: `${miniTorta}`,
    // title: 'Mini Tortas',
     width: '30%',
-    link:'/card'
+    link:'/confirmarCompra'
   },
   {
     url: `${Navidad}`,
@@ -42,11 +42,13 @@ const images = [
     url:`${paletas}`,
     //title: 'Paletas',
     width: '40%',
+    link:'/confirmarCompra'
   },
   {
     url: `${rellenos}`,
     //title: 'Corazón relleno',
     width: '30%',
+    link:'/confirmarCompra'
   },
   
 ];
@@ -134,7 +136,7 @@ export default function ButtonBases() {
     
     <div class="flex-container2" >
       <div class="center">  <span className="text1">Mis Productos</span></div>
-       
+      <h4>Podes ver algunos de mis de mis trabajos e ir a la tienda presionando sobre cualquier foto</h4>
     <div className={classes.root}>
       {images.map((image) => (
         <ButtonBase 
@@ -154,7 +156,7 @@ export default function ButtonBases() {
               backgroundImage: `url(${image.url})`,
             }}
           />
-          <span className={classes.imageBackdrop} />
+         <span className={classes.imageButton}></span>
         
           </Link>
         </ButtonBase>
