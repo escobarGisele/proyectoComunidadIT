@@ -60,8 +60,8 @@ const useStyles = makeStyles((theme) => ({
   botones: {
     display: 'flex',
     alignItems: 'center',
-    marginLeft: '6rem',
-    color: 'white',
+    
+    background:'black'
   },
   button: {
     paddingRight: '1rem',
@@ -138,7 +138,7 @@ export default function HomeProductos() {
         
           <Grid container spacing={3}>
             <Grid item xs={12}>
-              <ButtonGroup className={classes.botones} size="small" variant="text" aria-label="text primary button group">
+              <ButtonGroup className={classes.botones} size="large" variant="text" aria-label="text primary button group">
                 <Button
                   onClick={() => navigateTo(PAGE_PRODUCTS)} className={classes.button}
                 >
@@ -153,7 +153,7 @@ export default function HomeProductos() {
                   onClick={() => navigateTo(PAGE_CART)}
                   aria-label="add to shopping cart"
                   style={{ color: grey[50] }}
-                  className={classes.cart}
+                  className={classes.cart} 
                 >
                   Ver carrito
                 <StyledBadge badgeContent={getCartTotal()} showZero color="secondary">
