@@ -170,7 +170,7 @@ console.groupEnd()
        <div class="flex-item-left" >
        <div className={classes.header}>
       <Button variant="outlined" color="primary" onClick={() => getLinkWhastapp()} className={classes.total}>
-      Confirmar: <WhatsAppIcon fontSize="large"/>
+      Confirmar: <WhatsAppIcon fontSize="small"/>
 
       </Button>
       <Button variant="outlined" color="primary"  className={classes.total}>
@@ -178,7 +178,7 @@ console.groupEnd()
 
       </Button>
       <Button variant="outlined" color="primary" onClick={clearCart} className={classes.total}>
-      Vaciar carrito <DeleteIcon fontSize="large"/>
+      Vaciar carrito <DeleteIcon fontSize="small"/>
 
       </Button>
       <div>
