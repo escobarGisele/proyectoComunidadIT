@@ -12,14 +12,17 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
-
+import Box from '@material-ui/core/Box';
 const useStyles = makeStyles((theme) => ({
   productos: {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
+    display:'flex',
+    flexWrap: 'wrap',
   },
   producto: {
     padding: '40px',
+    flexWrap: 'wrap',
   },
   paper: {
     padding: theme.spacing(2),
@@ -61,8 +64,8 @@ const useStyles = makeStyles((theme) => ({
   botones: {
     display: 'flex',
   },
-  hola:{
-    paddingLeft: '1.5rem',
+  h1:{
+    background:'#f4f5db'
   }
 }))
 
@@ -151,20 +154,17 @@ export default function Products({ setCart, cart }) {
     setCart(newCart);
   };
 
-  // const [category, setCategory] = useState(HOME_GARDEN);
-
-  // const getProductsInCategory = () => {
-  //   return products.filter(
-  //     (product) => product.category === category
-  //   );
-  // };
 
   return (
-    <>
-      <h1>Box de desayuno/merienda</h1>
+    <div class="flex-container">
+     
+     <h1 className={classes.h1}>Box de desayuno/merienda</h1>
         <div className={classes.productos}>
+        
        {products.map((producto, index) => (
         <div className={classes.producto} key={index}>
+            
+      
         <Paper className={classes.paper}>
           <Grid container spacing={2}>
             <Grid item>
@@ -241,11 +241,12 @@ export default function Products({ setCart, cart }) {
             </Grid>
           </Grid>
         </Paper>
+      
         </div> 
       ))}
-      </div>
       
+      </div>
      
-    </>
+      </div>
   );
 }

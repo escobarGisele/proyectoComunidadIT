@@ -14,6 +14,8 @@ import logo from '../imagenes/logo.jpg';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    display:'flex',
+    flexWrap: 'wrap',
   },
   menuButton: {
     marginRight: theme.spacing(2),

@@ -81,6 +81,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: '#C4380A',
     }
   },
+  
 }))
  
 export default function Cart({ cart, setCart }) {
@@ -138,16 +139,11 @@ console.groupEnd()
   }
 
   return (
-    <>
-      
-      {/* {cart.length > 0 && (
-        <button onClick={clearCart}>Clear Cart</button>
-      )}
-       */}
-      
-         <br/>
-       <div className={classes.root}>
     
+      <div class="flex-container">
+      
+
+       <div class="flex-item-left" >
       <Button variant="outlined" color="primary" onClick={() => getLinkWhastapp()} className={classes.total}>
       Confirmar: <WhatsAppIcon fontSize="large"/>
 
@@ -160,17 +156,12 @@ console.groupEnd()
       Vaciar carrito <DeleteIcon fontSize="large"/>
 
       </Button>
-      
-    
 
-     
       
       
-     
-      </div>
       
-      <section  className="fondo" >
-      <div className={classes.root}>
+      {/* <div className={classes.root}> */}
+    
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -188,7 +179,7 @@ console.groupEnd()
       </Accordion>
       
     </div>
-      <div className={classes.productos}>
+    <div className={classes.productos}>
       {cart.map((producto, index) => (
         <div className={classes.producto} key={index}>
       <Paper className={classes.paper}>
@@ -208,8 +199,6 @@ console.groupEnd()
                 <Typography gutterBottom variant="subtitle1">
                   {producto.name}
                 </Typography>
-
-                
                 <Typography variant="body2" gutterBottom>
                   {producto.descripcion}
                 </Typography>
@@ -225,13 +214,15 @@ console.groupEnd()
                   Eliminar
                 </Button>
                 </Typography>
-                <Typography variant="body2" style={{ cursor: 'pointer' }}>
-                <Button 
-                className={classes.cantidad}
+
+                <Grid item>
+                
+                <Button id="boton"
+                className={classes.agregar}
                     
                   variant="outlined"
                   >
-                    <input type="number"
+                    <input type="number" 
                    value={producto.quantity}
               onChange={(e) =>
                 setQuantity(
@@ -242,22 +233,22 @@ console.groupEnd()
             />
                   Cantidad
                 </Button>
-                </Typography>
-              </Grid>
+              
+                </Grid>
 
+              </Grid>
             </Grid>
             <Grid item>
               <Typography variant="subtitle1">${producto.cost}</Typography>
-              
             </Grid>
           </Grid>
         </Grid>
       </Paper>
       </div> 
     ))}
+    </div>
     
     </div>
-    </section>
-    </>
+    
   );
 }

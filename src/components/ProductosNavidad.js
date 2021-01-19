@@ -56,6 +56,9 @@ const useStyles = makeStyles((theme) => ({
   botones: {
     display: 'flex',
   },
+  h1:{
+    background:'#f4f5db'
+  }
 }))
 
 
@@ -134,9 +137,11 @@ export default function ProductosNavidad({ setCart, cart }) {
   };
 
   return (
-    <>
-      <h1>Navidad</h1>
+    <div class="flex-container">
+      <h1 className={classes.h1}>Navidad</h1>
+      
         <div className={classes.productos}>
+        
        {products.map((producto, index) => (
         <div className={classes.producto} key={index}>
         <Paper className={classes.paper}>
@@ -216,6 +221,7 @@ export default function ProductosNavidad({ setCart, cart }) {
         </div> 
       ))}
       </div>
-     </>
+      
+      </div>
   );
 }

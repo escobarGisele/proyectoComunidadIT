@@ -43,7 +43,7 @@
 
 .flex-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   font-size: 20px;
   text-align: center;
   flex-direction: column;
@@ -61,13 +61,13 @@
 }
 
 .flex-item-left {
-
+  flex-wrap: wrap;
   padding: 0px;
   flex: 50%;
 }
 
 .flex-item-right {
-  
+  flex-wrap: wrap;
   padding: 0px;
   flex: 50%;
 }
@@ -98,7 +98,23 @@
   animation: text 3s 1;
 
 }
+.MuiButton-label {
+  width: 50;
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+}
+input[type="number"] {
+  width:40px;
+}
 
+.h1{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: end;
+  color: white;
+  
+}
 h3 {
   font-size: 60px;
   /* color: var(--primary-color); */
