@@ -14,14 +14,12 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
 
 
-const HOME_GARDEN = 'home and garden';
-const UTILITY = 'utility';
 const useStyles = makeStyles((theme) => ({
-  productos: {
+  products: {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
   },
-  producto: {
+  product: {
     padding: '40px',
   },
   paper: {
@@ -39,21 +37,15 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '100%',
     maxHeight: '100%',
   },
-  agregar: {
+  add: {
     marginRight: '1rem',
     backgroundColor: '#FFD900',
     '&:hover': {
       backgroundColor: '#D8B800',
     }
   },
-  verMas: {
-    color: 'whiteSmoke',
-    backgroundColor: '#EB5D2F',
-    '&:hover': {
-      backgroundColor: '#C4380A',
-    }
-  },
-  botones: {
+  
+  buttons: {
     display: 'flex',
   },
   h1:{
@@ -63,43 +55,41 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function ProductosNavidad({ setCart, cart }) {
+export default function Box({ setCart, cart }) {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  
   const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  
 
 
   const [products] = useState([
     {
-        category: UTILITY,
-        name: 'Navidad',
-        
-        cost: 180,
-        descripcion: 'Pa',
-        image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/Navidad%2FNavidad3.png?alt=media&token=fe23464f-3f3e-4e3b-bb1a-73bab4fe6ae4',
-      },
-      {
-        category: HOME_GARDEN,
-        name: 'Navidad2',
-        descripcion: 'Doble carne, bacon, cheddar y cebolla',
-        cost: 170,
-        image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/Navidad%2FNavidad2.png?alt=media&token=c6197554-da25-4916-bd83-d2251a539b70',
-      },
-      {
-        category: HOME_GARDEN,
-        name: 'Navidad3',
-        descripcion: 'Doble carne, cheddar, tomate, y pepino',
-        cost: 150,
-        image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/Navidad%2FNavidad1.png?alt=media&token=7cb1571e-3204-4893-9b70-331c408e7e34',
+        name: 'Box Uno',
+        cost: 1500,
+        descripcion: 'Torta mini number, 2 cupcakes, 1 mini brownie, 1 corazon relleno, 2 mini patita,2 cookies grandes',
+        image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/Box1.jpg?alt=media&token=8726265d-58d4-46b0-a5cc-4654ec893049',
       },
       
       {
-        category: UTILITY,
-        name: 'Navidad 4',
-        descripcion: 'Doble carne, cheddar, tomate, y pepino',
-        cost: 150,
-        image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/Navidad%2FNavidad.png?alt=media&token=b9ed787b-c104-4b8e-b97f-1d886ce86c4f',
+      
+        name: 'Box 2',
+        descripcion: '1 corazon de chocolate relleno de nutella, 1 cupcake, 2 conitos, 1 mini brownie, 2 paletas rellenas',
+        cost: 1600,
+        image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/box2.jpg?alt=media&token=85dd5ad6-c300-440c-b6ee-d0425c751dbd',
+      },
+      
+      {
+        name: 'Box 3',
+        descripcion: '1 Budin grande de limon con glace, 2 cupcakes, 1 tarta de limon, 1 corazon blanco de dulce de leche ',
+        cost: 1300,
+        image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/box3.jpg?alt=media&token=eab9ce10-4724-4ed8-a86c-d61921eefb0a',
+      },
+      {
+      
+        name: 'Box 4',
+        descripcion: '2 medialunas, 4 chipas , 1 mini brownie, 2 sandwich de miga triples , 1 jugo natural de naranja de 1L',
+        cost: 1500,
+        image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/box4.jpg?alt=media&token=7770bd49-00da-4a93-ae0d-2a360ffe01d4',
       },
       
   ]);
@@ -121,30 +111,23 @@ export default function ProductosNavidad({ setCart, cart }) {
     setCart(newCart);
   };
 
-  const [category, setCategory] = useState(HOME_GARDEN);
-
-  const getProductsInCategory = () => {
-    return products.filter(
-      (product) => product.category === category
-    );
-  };
 
   return (
     <div class="flex-container">
-      <h1 className={classes.h1}>Navidad</h1>
+      <h1 className={classes.h1}>Box armados </h1>
       
-        <div className={classes.productos}>
+        <div className={classes.products}>
         
-       {products.map((producto, index) => (
-        <div className={classes.producto} key={index}>
+       {products.map((product, index) => (
+        <div className={classes.product} key={index}>
         <Paper className={classes.paper}>
           <Grid container spacing={2}>
             <Grid item>
               <ButtonBase className={classes.image}>
               <img 
                 className= {classes.img} 
-                alt= {producto.name} 
-                src= {producto.image} 
+                alt= {product.name} 
+                src= {product.image} 
               />
               </ButtonBase>
             </Grid>
@@ -152,18 +135,18 @@ export default function ProductosNavidad({ setCart, cart }) {
               <Grid item xs container direction="column" spacing={2}>
                 <Grid item xs>
                   <Typography gutterBottom variant="subtitle1">
-                    {producto.name}
+                    {product.name}
                   </Typography>
                   <Typography variant="body2" gutterBottom>
-                    {producto.descripcion}
+                    {product.descripcion}
                   </Typography>
                   
                 </Grid>
-                <Grid item  className={classes.botones}>
+                <Grid item  className={classes.buttons}>
                   <Typography variant="body2" style={{ cursor: 'pointer' }}>
                   <Button 
-                    onClick={() => addToCart(producto)}
-                    className={classes.agregar} 
+                    onClick={() => addToCart(product)}
+                    className={classes.add} 
                     variant="outlined"
                     >
                     Agregar
@@ -174,7 +157,7 @@ export default function ProductosNavidad({ setCart, cart }) {
                 </Grid>
               </Grid>
               <Grid item>
-                <Typography variant="subtitle1">${producto.cost}</Typography>
+                <Typography variant="subtitle1">${product.cost}</Typography>
               </Grid>
             </Grid>
           </Grid>

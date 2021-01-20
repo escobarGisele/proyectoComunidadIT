@@ -187,19 +187,17 @@ console.groupEnd()
       </Button>
 
       <Dialog open={open} onClose={handleClose} >
-        <DialogTitle id="form-dialog-title">Completa </DialogTitle>
+        <DialogTitle id="form-dialog-title">Completa los datos  </DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            Por favor completa los datos
-          </DialogContentText>
+        
           <DialogoForm/>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
-            Cancel
+            Cancelar
           </Button>
           <Button onClick={handleClose} color="primary">
-            Subscribe
+            Aceptar
           </Button>
         </DialogActions>
       </Dialog>

@@ -14,13 +14,13 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 const useStyles = makeStyles((theme) => ({
-  productos: {
+  products: {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
     display:'flex',
     flexWrap: 'wrap',
   },
-  producto: {
+  product: {
     padding: '40px',
     flexWrap: 'wrap',
   },
@@ -47,21 +47,14 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: '100%',
 
   },
-  agregar: {
+  add: {
     marginRight: '1rem',
     backgroundColor: '#FFD900',
     '&:hover': {
       backgroundColor: '#D8B800',
     }
   },
-  verMas: {
-    color: 'whiteSmoke',
-    backgroundColor: '#EB5D2F',
-    '&:hover': {
-      backgroundColor: '#C4380A',
-    }
-  },
-  botones: {
+  buttons: {
     display: 'flex',
   },
   h1:{
@@ -87,58 +80,58 @@ export default function Products({ setCart, cart }) {
   const [products] = useState([
     {
       name: 'Mini tarta Frutilla',
-      cost: 180,
-      descripcion: 'Mini tarta de frutilla con copos de crema',
+      cost: 100,
+      description: 'Mini tarta de frutilla con copos de crema',
       image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/miniTartaFrutilla.jpg?alt=media&token=89adea20-1ab6-4d09-baed-3ad4c350ae79',
     },
   
     {
         name: 'Mini tarta Oreo',
-        cost: 180,
-        descripcion: 'Mini tarta de oreo con dulce de leche y relleno oreo',
+        cost: 100,
+        description: 'Mini tarta de oreo con dulce de leche y relleno oreo',
         image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/miniTartaOreo.jpg?alt=media&token=7ceb2cbd-11ac-4a73-8af6-bd2d24f2df30',
       },
       {
         
         name: 'Vaso tiramisu',
-        descripcion: 'Vaso de 350cc de tiramisu, relleno de queso mascarpone',
-        cost: 170,
+        description: 'Vaso de 350cc de tiramisu, relleno de queso mascarpone',
+        cost: 120,
         image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/vasoTiramisu.jpg?alt=media&token=451891e2-50fc-4ae8-a729-9f67ae1969dd',
       },
       {
         name: 'Vaso de chocotorta',
-        cost: 180,
-        descripcion: 'Vaso de 350 cc de chocotorta, relleno de queso crema y dulce de leche',
+        cost: 120,
+        description: 'Vaso de 350 cc de chocotorta, relleno de queso crema y dulce de leche',
         image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/vasoChocotorta.jpg?alt=media&token=b3c07eda-a87e-4064-ba06-46b4992b05b1',
       },
       {
         
         name: 'AlfaCookies',
-        descripcion: 'Alfajor de cookies relleno de nutella',
-        cost: 170,
+        description: 'Alfajor de cookies relleno de nutella',
+        cost: 60,
         image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/alfaCookies.jpg?alt=media&token=3e2bf9f6-3c7c-434b-842a-af594e376976',
       },
     
       {
         
         name: 'AlfaCookies bañadas',
-        descripcion: 'Alfajor de cookies relleno de dulce de leche',
-        cost: 150,
+        description: 'Alfajor de cookies relleno de dulce de leche',
+        cost: 80,
         image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/alfaBa%C3%B1adas.jpg?alt=media&token=8231e901-47a1-4722-af23-cd9d3332e7c2',
       },
       {
         
         name: 'Cupcake Marroc',
-        descripcion: 'Cupcake marroc con trozos de oreo',
-        cost: 150,
+        description: 'Cupcake marroc con trozos de oreo',
+        cost: 60,
         image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/cupcakeMarroc.jpg?alt=media&token=3f60f747-866b-429f-9cbc-ecf98c352623',
       },
       
       {
         
         name: 'Medialunas',
-        descripcion: 'Medialunas de grasa caseras     -----',
-        cost: 150,
+        description: 'Medialunas de grasa caseras(unidades com)',
+        cost: 40,
         image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/medialunas.jpg?alt=media&token=1843d2df-7c90-48f6-bd33-e609bed61ac0',
       },
       
@@ -165,11 +158,11 @@ export default function Products({ setCart, cart }) {
   return (
     <div class="flex-container">
      
-     <h1 className={classes.h1}>Box de desayuno/merienda</h1>
-        <div className={classes.productos}>
+     <h1 className={classes.h1}>Arma tu Box de desayuno/merienda</h1>
+        <div className={classes.products}>
         
-       {products.map((producto, index) => (
-        <div className={classes.producto} key={index}>
+       {products.map((product, index) => (
+        <div className={classes.product} key={index}>
             
       
         <Paper className={classes.paper}>
@@ -178,8 +171,8 @@ export default function Products({ setCart, cart }) {
               <ButtonBase className={classes.image}>
               <img 
                 className= {classes.img} 
-                alt= {producto.name} 
-                src= {producto.image} 
+                alt= {product.name} 
+                src= {product.image} 
               />
               </ButtonBase>
             </Grid>
@@ -187,22 +180,22 @@ export default function Products({ setCart, cart }) {
               <Grid item xs container direction="column" spacing={2}>
                 <Grid item xs>
                   <Typography gutterBottom variant="subtitle1">
-                    {producto.name}
+                    {product.name}
                   </Typography>
                 
-                <Typography variant="subtitle1" className="hola"> ${producto.cost}</Typography>
+                <Typography variant="subtitle1" > ${product.cost}</Typography>
               
                   <Typography variant="body2" >
-                    {producto.descripcion}
+                    {product.description}
                   </Typography>
                   
                 </Grid>
-                <Grid item  className={classes.botones}>
+                <Grid item  className={classes.buttons}>
                   <Typography variant="body2" style={{ cursor: 'pointer' }}>
                     
                   <Button 
-                    onClick={() => addToCart(producto)}
-                    className={classes.agregar} 
+                    onClick={() => addToCart(product)}
+                    className={classes.add} 
                     variant="outlined"
                     >
                     Agregar

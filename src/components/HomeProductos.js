@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import Products from './Products';
-import Cart from './Cart'
-import ProductosNavidad from './ProductosNavidad'
+import Cart from './Cart';
+import ChristmasProducts from './ChristmasProducts';
+import Cakes from './Cakes';
+import ValentinesDay from './ValentinesDay';
+import Box from './Box';
 import IconButton from '@material-ui/core/IconButton';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { withStyles } from '@material-ui/core/styles';
@@ -13,7 +16,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 const PAGE_PRODUCTS = 'products';
-const PAGE_PRODUCTS_NAVIDAD = 'productosNavidad'
+const PAGE_PRODUCTS_chistmas = 'ChristmasProducts';
+const PAGE_PRODUCTS_Cakes = 'Cakes';
+const PAGE_PRODUCTS_Valentin = 'Valentin';
+const PAGE_PRODUCTS_Box = 'Box';
 const PAGE_CART = 'cart';
 
 const StyledBadge = withStyles((theme) => ({
@@ -57,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     marginLeft: '3rem',
   },
-  botones: {
+  buttons: {
     display: 'flex',
     alignItems: 'center',
     
@@ -74,29 +80,6 @@ const useStyles = makeStyles((theme) => ({
   cart: {
     marginLeft: '16.5rem',
   },
-  siguiente: {
-    marginTop: '0.5rem',
-    marginBottom: '0.5rem',
-    marginLeft: '2rem',
-    borderRadius: '50px',
-    backgroundColor: '#89C739',
-    color: 'white',
-    '&:hover': {
-      backgroundColor: '#629F13',
-    },
-  },
-  subtitle1: {
-    paddingTop: '9rem',
-    display: 'flex',
-    justifyContent: 'center',
-    color: '#752A07',
-  },
-  section: {
-    display: 'flex',
-    justifyContent: 'space-around',
-    marginLeft: '8rem',
-    marginRight: '1rem',
-  },
   root: {
     flexGrow: 1,
   },
@@ -106,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
 export default function HomeProductos() {
   const classes = useStyles();
   const [cart, setCart] = useState([]);
-  const [page, setPage] = useState(PAGE_PRODUCTS, PAGE_PRODUCTS_NAVIDAD);
+  const [page, setPage] = useState(PAGE_PRODUCTS, PAGE_PRODUCTS_chistmas, PAGE_PRODUCTS_Cakes, PAGE_PRODUCTS_Valentin, PAGE_PRODUCTS_Box);
 
   const navigateTo = (nextPage) => {
     setPage(nextPage);
@@ -123,13 +106,10 @@ export default function HomeProductos() {
     setCart([])
   };
 
-  const removePromoCart = (eliminarPromocion) => {
-    setCart(cart.filter(promocion => promocion !== eliminarPromocion))
+  const removePromoCart = (deleteCart) => {
+    setCart(cart.filter(promocion => promocion !== deleteCart))
   }
-  const addToCartPromo = (promocion) => {
-    // console.log("Funcion de agregar al carrito");
-    setCart([...cart, { ...promocion }]);
-  };
+  
 
   return (
     <div class="flex-container">
@@ -138,17 +118,35 @@ export default function HomeProductos() {
         
           <Grid container spacing={3}>
             <Grid item xs={12}>
-              <ButtonGroup className={classes.botones} size="large" variant="text" aria-label="text primary button group">
+              <ButtonGroup className={classes.buttons} size="large" variant="text" aria-label="text primary button group">
                 <Button
                   onClick={() => navigateTo(PAGE_PRODUCTS)} className={classes.button}
                 >
                   Desayunos/Meriendas
               </Button>
                 <Button
-                  onClick={() => navigateTo(PAGE_PRODUCTS_NAVIDAD)} className={classes.button}
+                  onClick={() => navigateTo(PAGE_PRODUCTS_chistmas)} className={classes.button}
                 >
                   Navidad
               </Button>
+              <Button
+                  onClick={() => navigateTo(PAGE_PRODUCTS_Cakes)} className={classes.button}
+                >
+                  Tortas
+              </Button>
+              <Button
+                  onClick={() => navigateTo(PAGE_PRODUCTS_Valentin)} className={classes.button}
+                >
+                  San Valentin 
+              </Button>
+              
+              <Button
+                  onClick={() => navigateTo(PAGE_PRODUCTS_Box)} className={classes.button}
+                >
+                  Box Armados
+              </Button>
+             
+              
                 <IconButton
                   onClick={() => navigateTo(PAGE_CART)}
                   aria-label="add to shopping cart"
@@ -171,12 +169,25 @@ export default function HomeProductos() {
         <Products cart={cart} setCart={setCart} />
 
       )}
-      {page === PAGE_PRODUCTS_NAVIDAD && (
-        <ProductosNavidad cart={cart} setCart={setCart} />
+      {page === PAGE_PRODUCTS_chistmas && (
+        <ChristmasProducts cart={cart} setCart={setCart} />
 
       )}
+      
+      {page === PAGE_PRODUCTS_Cakes && (
+        <Cakes cart={cart} setCart={setCart} />
 
-    
+      )}
+      
+      {page === PAGE_PRODUCTS_Valentin && (
+        <ValentinesDay cart={cart} setCart={setCart} />
+
+      )}
+      
+      {page === PAGE_PRODUCTS_Box && (
+        <Box cart={cart} setCart={setCart} />
+
+      )}
       {page === PAGE_CART && (
         <Cart
           cart={cart}

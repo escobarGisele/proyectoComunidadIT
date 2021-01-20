@@ -4,31 +4,30 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 
 import box from '../imagenes/Box/box.png';
+import boxSanValentin from '../imagenes/boxSanValentin.jpg';
 import pascuas from '../imagenes/pascuas.png'
 import miniTorta from '../imagenes/miniTorta.jpg';
 import paletas from '../imagenes/paletas.png';
 import Navidad from '../imagenes/Navidad.png';
 import rellenos from '../imagenes/rellenos.png';
 import {Link} from "react-router-dom";
-// import Modal from './Modal'
-// import Footer from './Footer';
 
 const images = [
   {
     url: `${box}`,
-    //title: 'Box',
+    
     width: '30%',
     link:'/confirmarCompra'
   },
   {
-    url: `${pascuas}`,
-    //title: 'Pascuas',
+    url: `${boxSanValentin}`,
+    
     width: '40%',
     link:'/confirmarCompra'
   },
   {
     url: `${miniTorta}`,
-   // title: 'Mini Tortas',
+   
     width: '30%',
     link:'/confirmarCompra'
   },
@@ -133,7 +132,9 @@ export default function ProductosGaleria() {
             </Link>
       </div>
       
-      <h4>Podes ver algunos de mis de mis trabajos e ir a la tienda presionando sobre cualquier foto</h4>
+      <h4>Podes ver algunos de mis de mis trabajos e ir a la tienda presionando sobre cualquier foto, además 
+        podés personalizarlo de la manera que más te guste! 
+      </h4>
     
     <div className={classes.root}>
       {images.map((image) => (

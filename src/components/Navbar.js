@@ -47,6 +47,7 @@ export default function DenseAppBar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar variant="dense">
+        <Link to="/">
         <IconButton
             edge="start"
             className={classes.menuButton}
@@ -57,7 +58,7 @@ export default function DenseAppBar() {
             
           <Avatar alt="" src={logo} className={classes.large}/>
           </IconButton>
-                      
+          </Link>          
           <Menu
         id="simple-menu"
         anchorEl={anchorEl}
@@ -66,9 +67,10 @@ export default function DenseAppBar() {
         onClose={handleClose}
       >
         <MenuItem onClick={handleClose}><Link to="/">Inicio</Link></MenuItem>
-        <MenuItem onClick={handleClose}><Link to="/contacto">Contacto</Link></MenuItem>
-        <MenuItem onClick={handleClose}><Link to="/sobrenosotros">Nosotros</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link to="/productos">Productos</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link to="/confirmarCompra">Comprar</Link></MenuItem>
       </Menu>
+      
           <Typography className={classes.title} variant="h4" noWrap>
            Bakerysunny
           </Typography>
