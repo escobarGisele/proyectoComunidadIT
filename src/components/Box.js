@@ -67,6 +67,7 @@ export default function Box({ setCart, cart }) {
         name: 'Box Uno',
         cost: 1500,
         descripcion: 'Torta mini number, 2 cupcakes, 1 mini brownie, 1 corazon relleno, 2 mini patita,2 cookies grandes',
+        
         image: 'https://firebasestorage.googleapis.com/v0/b/bakerysunny-4b7d3.appspot.com/o/Box1.jpg?alt=media&token=8726265d-58d4-46b0-a5cc-4654ec893049',
       },
       
